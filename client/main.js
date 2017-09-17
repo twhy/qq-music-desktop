@@ -8,13 +8,15 @@ let mainWindow
 app.on('ready', createWindow)
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 980, height: 672 })
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  mainWindow = new BrowserWindow({ 
+    width: 980, 
+    height: 672, 
+    resizable: false,
+    titleBarStyle: 'hidden'
+  })
 
+  mainWindow.loadURL('http://localhost:8080')
+  
   mainWindow.on('closed', function() {
     mainWindow = null
   })
