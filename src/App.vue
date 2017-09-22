@@ -2,23 +2,29 @@
   <div id="app">
     <Sidebar />
     <div class="main">
-      <router-view></router-view>
+      <Navbar />
+      <div class="view">
+        <router-view></router-view>
+      </div>
     </div>
-    <div class="player"></div>
+    <Player />
   </div>
 </template>
 
 <script>
+import Navbar from './components/Navbar'
+import Player from './components/Player'
 import Sidebar from './components/Sidebar'
 
 export default {
   name: 'app',
-  components: { Sidebar }
+  components: { Navbar, Player, Sidebar }
 }
 </script>
 
 <style lang="scss">
   @import './assets/scss/reset.scss';
+  @import './assets/scss/helpers.scss';
   @import './assets/scss/variables.scss';
 </style>
 
@@ -29,11 +35,18 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     display: flex;
+    flex-wrap: wrap;
     background-attachment: #F3F3F3;
   }
 
   .main {
     flex: 1;
+    overflow: auto;
+    height: calc(100vh - 60px);
+    .view {
+      overflow: auto;
+      height: calc(100vh - 106px);
+    }
   }
 
 </style>

@@ -49,7 +49,6 @@ export default {
     font-size: 13px;
     border-radius: 3px;
     padding-left: 28px;
-    transition: .1s;
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 5px;

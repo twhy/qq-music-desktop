@@ -6,10 +6,17 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+const state = {
+  tabs: {
+    radio: 'hot'
+  }
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  data: { state },
   template: '<App/>',
   components: { App }
 })
