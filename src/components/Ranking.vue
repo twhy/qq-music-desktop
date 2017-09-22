@@ -2,11 +2,11 @@
   <div class="ranking">
     <div class="ranking-section">
       <div class="ranking-title peak"></div>
-      <RankingList :list="list[0].List" />
+      <RankingList :list="rank[0].List" />
     </div>
     <div class="rankink-section">
       <div class="ranking-title global"></div>
-      <RankingList :list="list[1].List"/>
+      <RankingList :list="rank[1].List"/>
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ import RankingList from './RankingList'
 export default {
   data() {
     return {
-      list: rankingjson
+      rank: rankingjson
     }
   },
   components: { RankingList }
