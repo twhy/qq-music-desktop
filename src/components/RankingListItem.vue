@@ -2,9 +2,7 @@
   <div class="ranking-list-item">
     <div class="image">
       <img :src="item.pic_v12">
-      <div class="overlay">
-        <div :class="[paused && 'paused', 'icon']" @click="toggle"></div>
-      </div>
+      <Playable/>
     </div>
     <ol class="songs">
       <li class="song ellipsis" v-for="(song, index) in item.songlist.slice(0, 3)" :key="index">
@@ -17,19 +15,12 @@
 </template>
 
 <script>
+import Playable from './shared/Playable'
+
 export default {
   props: ['item'],
   name: 'ranking-list-item',
-  data() {
-    return {
-      paused: false
-    }
-  },
-  methods: {
-    toggle() {
-      this.paused = !this.paused
-    }
-  }
+  components: { Playable }
 }
 </script>
 
@@ -46,44 +37,6 @@ export default {
       display: block;
       width: 126px;
       height: 126px;
-    }
-    .overlay {
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      transition: .4s;
-      background: rgba(0, 0, 0, 0);
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .icon {
-        opacity: 0;
-        width: 45px;
-        height: 45px;
-        transition: opacity .4s;
-        background: url(../assets/images/icon-rank-play.png) no-repeat;
-        background-size: 45px;
-        &:hover {
-          background-image: url(../assets/images/icon-rank-play-hover.png);
-        }
-        &.paused {
-          background-image: url(../assets/images/icon-rank-pause.png);
-          &:hover {
-            background-image: url(../assets/images/icon-rank-pause-hover.png);
-          }
-        }
-      }
-    }
-    &:hover {
-      .overlay {
-        z-index: 1;
-        background: rgba(0, 0, 0, .5);
-      }
-      .icon {
-        opacity: 1;
-      }
     }
   }
   .songs {
