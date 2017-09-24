@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Playable from './shared/Playable'
+import Playable from '../shared/Playable'
 
 export default {
   props: ['item'],

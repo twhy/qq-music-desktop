@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import json from '../json/ranking'
+import json from '../../json/ranking'
 import RankingList from './RankingList'
 
 export default {
@@ -40,7 +40,7 @@ export default {
   &::before {
     content: "";
     background-size: 102px auto;
-    background-image: url(../assets/images/rank-title.png);
+    background-image: url(../../assets/images/rank-title.png);
     height: 25px;
     position: absolute;
     top: 0;
@@ -50,7 +50,7 @@ export default {
   &::after {
     content: "";
     background-size: 102px auto;
-    background-image: url(../assets/images/rank-title.png);
+    background-image: url(../../assets/images/rank-title.png);
     height: 25px;
     position: absolute;
     top: 0;

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Radio from '@/components/radio/Radio'
-import Ranking from '@/components/Ranking'
+import Ranking from '@/components/ranking/Ranking'
 import Recommend from '@/components/Recommend'
 
 Vue.use(Router)
