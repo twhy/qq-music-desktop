@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Radio from '@/components/Radio'
+import Radio from '@/components/radio/Radio'
 import Ranking from '@/components/Ranking'
 import Recommend from '@/components/Recommend'
 
@@ -10,6 +10,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/recommend'
+    },
+    {
+      path: '/recommend',
       name: 'Recommend',
       component: Recommend
     },
@@ -19,8 +23,9 @@ export default new Router({
       component: Ranking
     },
     {
-      path: '/radio',
+      path: '/radio/:id?',
       name: 'Radio',
+      props: true,
       component: Radio
     }
   ]

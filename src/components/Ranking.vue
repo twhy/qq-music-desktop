@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import rankingjson from '../json/ranking'
+import json from '../json/ranking'
 import RankingList from './RankingList'
 
 export default {
   data() {
     return {
-      rank: rankingjson
+      rank: json
     }
   },
   components: { RankingList }

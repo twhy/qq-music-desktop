@@ -1,5 +1,5 @@
 <template>
-  <div class="tab">
+  <div class="tab" v-show="active">
     <slot></slot>
   </div> 
 </template>
@@ -8,7 +8,17 @@
 export default {
   name: 'tab',
   props: {
-    name: { required: true }
+    name: { required: true },
+    href: { default: '' },
+    selected: { default: false }
+  },
+  data() {
+    return {
+      active: false
+    }
+  },
+  created() {
+    this.active = this.selected
   }
 }
 </script>

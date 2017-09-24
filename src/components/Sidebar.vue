@@ -6,7 +6,7 @@
     <div class="section music-house">
       <div class="title">音乐馆</div>
       <div class="links">
-        <router-link class="link recommend" to="/">精选</router-link>
+        <router-link class="link recommend" to="/recommend">精选</router-link>
         <router-link class="link ranking" to="/ranking">排行</router-link>
         <router-link class="link playlist" to="/playlist">歌单</router-link>
         <router-link class="link radio" to="/radio">电台</router-link>
@@ -56,13 +56,13 @@ export default {
     @each $item in $icons {
       &.#{$item} {
         background-image: url(../assets/images/icon-#{$item}.png);
-        &.router-link-exact-active {
+        &.router-link-active {
           background-image: url(../assets/images/icon-#{$item}-active.png);
         }
       }
     }
   }
-  .router-link-exact-active {
+  .router-link-active {
     color: #fff;
     background-color: var(--main-color);
   }
