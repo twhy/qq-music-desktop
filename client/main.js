@@ -12,7 +12,8 @@ function createWindow() {
     width: 980, 
     height: 672, 
     resizable: false,
-    titleBarStyle: 'hidden'
+    titleBarStyle: 'hidden',
+    backgroundColor: '#fff'
   })
 
   mainWindow.loadURL('http://localhost:8080')
