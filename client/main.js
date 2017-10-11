@@ -16,7 +16,7 @@ function createWindow() {
     backgroundColor: '#fff'
   })
 
-  mainWindow.loadURL('http://localhost:8080')
+  mainWindow.loadURL('http://localhost:3000')
   
   mainWindow.on('closed', function() {
     mainWindow = null
