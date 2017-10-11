@@ -1,5 +1,11 @@
 <template>
-  <div class="recommend">推荐</div>
+  <div class="recommend">
+    <Carousel>
+      <CarouselSlide v-for="(slide, index) in slides" :key="index">
+        <img class="image" :src="slide.image">
+      </CarouselSlide>
+    </Carousel>
+  </div>
 </template>
 
 <script>
@@ -16,24 +22,24 @@ export default {
     }
   },
   created() {
-    console.log('created', this.$root.$data.state)
+
   }
 }
 </script>
 
-<style>
-  .el-carousel__item--card {
-    width: auto;
-  }
-</style>
-
 
 <style lang="scss" scoped>
-  .slice {
-    .image {
-      width: 525px;
-      height: 210px;
-    }
+  .carousel {
+    width: 525px;
+    height: 210px;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .image {
+    width: 525px;
+    height: 210px;
+    display: block;
   }
 </style>
 

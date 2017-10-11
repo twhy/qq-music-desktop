@@ -3,11 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import Tab from './components/Tab'
+import Carousel from './components/Carousel'
 import router from './router'
 
 Vue.config.productionTip = false
 
 Vue.use(Tab)
+Vue.use(Carousel)
 
 /* eslint-disable no-new */
 new Vue({

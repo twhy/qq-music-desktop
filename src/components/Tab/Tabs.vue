@@ -32,7 +32,7 @@ export default {
     change(tab, idx) {
       this.tabs.forEach(tab => tab.active = false)
       tab.active = true
-    },
+    }
   },
   computed: {
     left() {
