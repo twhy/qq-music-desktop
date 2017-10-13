@@ -29,6 +29,10 @@ export default {
 
 
 <style lang="scss" scoped>
+  .recommend {
+    overflow-x: hidden;
+  }
+
   .carousel {
     width: 525px;
     height: 210px;
