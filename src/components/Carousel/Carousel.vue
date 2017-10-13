@@ -2,7 +2,7 @@
   <div class="carousel">
     <slot></slot>
     <ul class="dots">
-      <li :class="['dot', activeIndex === i - 1 && 'active']"
+      <li :class="['dot', active === i - 1 && 'active']"
           v-for="i in slides.length" :key="i" @click="setActiveSlide(i - 1)"></li>
     </ul>
     <div class="arrow prev" @click="prev"></div>
@@ -15,8 +15,8 @@ export default {
   name: 'carousel',
   data() {
     return {
-      slides: [],
-      activeIndex: 0
+      active: 0,
+      slides: []
     }
   },
   mounted() {
@@ -26,16 +26,16 @@ export default {
 
   methods: {
     setActiveSlide(index) {
-      if (index < 0) this.activeIndex = this.slides.length - 1
-      else if (index >= this.slides.length) this.activeIndex = 0
-      else this.activeIndex = index
-      this.slides.forEach(slide => slide.translateSlide(this.activeIndex))
+      if (index < 0) this.active = this.slides.length - 1
+      else if (index >= this.slides.length) this.active = 0
+      else this.active = index
+      this.slides.forEach(slide => slide.translateSlide(this.active))
     },
     prev() {
-      this.setActiveSlide(this.activeIndex - 1)
+      this.setActiveSlide(this.active - 1)
     },
     next() {
-      this.setActiveSlide(this.activeIndex + 1)
+      this.setActiveSlide(this.active + 1)
     }
   }
 }
