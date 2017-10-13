@@ -32,7 +32,7 @@ export default {
 
   methods: {
     activate() {
-      this.$parent.setActiveItem(this.index)
+      this.$parent.setActiveSlide(this.index)
     },
 
     offsetTo(target) {

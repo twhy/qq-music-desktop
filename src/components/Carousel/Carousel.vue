@@ -3,7 +3,7 @@
     <slot></slot>
     <ul class="dots">
       <li :class="['dot', activeIndex === i - 1 && 'active']"
-          v-for="i in slides.length" :key="i" @click="setActiveItem(i - 1)"></li>
+          v-for="i in slides.length" :key="i" @click="setActiveSlide(i - 1)"></li>
     </ul>
     <div class="arrow prev" @click="prev"></div>
     <div class="arrow next" @click="next"></div>
@@ -21,21 +21,21 @@ export default {
   },
   mounted() {
     this.slides = this.$children
-    this.setActiveItem(Math.floor((this.slides.length - 1) / 2))
+    this.setActiveSlide(Math.floor((this.slides.length - 1) / 2))
   },
 
   methods: {
-    setActiveItem(index) {
+    setActiveSlide(index) {
       if (index < 0) this.activeIndex = this.slides.length - 1
       else if (index >= this.slides.length) this.activeIndex = 0
       else this.activeIndex = index
       this.slides.forEach(slide => slide.translateSlide(this.activeIndex))
     },
     prev() {
-      this.setActiveItem(this.activeIndex - 1)
+      this.setActiveSlide(this.activeIndex - 1)
     },
     next() {
-      this.setActiveItem(this.activeIndex + 1)
+      this.setActiveSlide(this.activeIndex + 1)
     }
   }
 }
